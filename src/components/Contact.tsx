@@ -19,7 +19,7 @@ export default function Contact() {
             hello@jvanet.com
           </a>
           <p className="text-gray-400 mt-2">Brisbane, Australia</p>
-          <p className="text-gray-500 text-sm mt-2">ABN: XX XXX XXX XXX</p>
+          <p className="text-gray-500 text-sm mt-2">ABN: 26 696 484 107</p>
         </div>
         <div className="border-t border-white/10 mt-16 pt-8 text-center">
           <p className="text-sm text-gray-500">

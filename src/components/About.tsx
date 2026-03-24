@@ -30,7 +30,7 @@ export default function About() {
 
         <div className="scroll-hidden">
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            Founded by a technologist with over a decade of experience spanning enterprise data centres, cloud platforms (Azure, AWS, GCP), virtualisation (VMware, Hyper-V, Proxmox), disaster recovery, and full-stack web development — JVANET bridges the gap between legacy enterprise infrastructure and cutting-edge AI product development.
+            Backed by a leadership team with a combined 100 years of technology experience — and founded by a technologist with two decades in IT spanning enterprise data centres, cloud platforms (Azure, AWS, GCP), virtualisation (VMware, Hyper-V, Proxmox), disaster recovery, and full-stack web development — JVANET bridges the gap between legacy enterprise infrastructure and cutting-edge AI product development.
           </p>
         </div>
       </div>

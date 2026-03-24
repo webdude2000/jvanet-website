@@ -9,9 +9,13 @@ export default function Hero() {
       }}
     >
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4">
           JVANET PTY LTD
         </h1>
+
+        <p className="text-sm md:text-base text-gray-500 tracking-widest uppercase mb-6">
+          Joint Venture Autonomous Neural Engine Technology
+        </p>
 
         <p className="text-xl md:text-2xl bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent mb-6">
           Engineering AI-Powered Products from Concept to Revenue

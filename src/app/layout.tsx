@@ -10,12 +10,12 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "JVANET PTY LTD — AI-Powered Product Studio & IT Consulting",
   description:
-    "Australian technology company building AI-powered software products and providing enterprise IT consulting services.",
+    "JVANET (Joint Venture Autonomous Neural Engine Technology) — Australian technology company building AI-powered software products and providing enterprise IT consulting services.",
   metadataBase: new URL("https://jvanet.com"),
   openGraph: {
     title: "JVANET PTY LTD — AI-Powered Product Studio & IT Consulting",
     description:
-      "Australian technology company building AI-powered software products and providing enterprise IT consulting services.",
+      "JVANET (Joint Venture Autonomous Neural Engine Technology) — Australian technology company building AI-powered software products and providing enterprise IT consulting services.",
     url: "https://jvanet.com",
     siteName: "JVANET PTY LTD",
     type: "website",

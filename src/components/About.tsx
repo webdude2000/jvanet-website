@@ -14,7 +14,7 @@ export default function About() {
 
         <div className="scroll-hidden">
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            JVANET is an Australian-registered technology company specialising in building, launching, and monetising AI-powered software products. We combine deep enterprise IT infrastructure experience with modern AI development workflows to ship production-grade products at startup speed.
+            JVANET — Joint Venture Autonomous Neural Engine Technology — is an Australian technology company specialising in building, launching, and monetising AI-powered software products. We combine deep enterprise IT infrastructure experience with modern AI development workflows to ship production-grade products at startup speed.
           </p>
         </div>
 

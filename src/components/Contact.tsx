@@ -23,7 +23,7 @@ export default function Contact() {
         </div>
         <div className="border-t border-white/10 mt-16 pt-8 text-center">
           <p className="text-sm text-gray-500">
-            © 2025 JVANET PTY LTD. All rights reserved. Australian Company.
+            © 2025 JVANET PTY LTD — Joint Venture Autonomous Neural Engine Technology. All rights reserved. Australian Company.
           </p>
         </div>
       </div>

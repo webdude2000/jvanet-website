@@ -31,11 +31,11 @@ const services = [
 ];
 
 export default function Services() {
-  useScrollAnimation();
+  const ref = useScrollAnimation();
 
   return (
     <section id="services" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div ref={ref} className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
           Enterprise IT Consulting
         </h2>

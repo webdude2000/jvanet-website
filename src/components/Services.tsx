@@ -57,6 +57,18 @@ export default function Services() {
           </div>
         ))}
 
+        <div className="scroll-hidden mt-10 border border-amber-500/30 bg-amber-500/5 rounded-lg px-6 py-4">
+          <p className="text-amber-400 font-semibold text-sm uppercase tracking-wide mb-1">
+            Currently Unavailable
+          </p>
+          <p className="text-gray-300 text-sm">
+            Due to a high volume of existing engagements, we are not accepting
+            new consulting clients at this time. Our current focus is on
+            building AI-powered products. Please check back later or get in
+            touch to join our waitlist.
+          </p>
+        </div>
+
         <p className="text-gray-500 text-sm mt-8 italic">
           Engagements are project-based or advisory. Based in Brisbane,
           available remotely across APAC.

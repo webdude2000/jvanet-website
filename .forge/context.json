@@ -1,0 +1,14 @@
+{
+  "task_id": "ui-jva-001",
+  "task_name": "JVANet \u2014 Full UI redesign with Impeccable premium design",
+  "task_description": "Redesign the JVANet IT services website using Impeccable skill for premium corporate tech aesthetics. Must project credibility, technical authority, and professionalism.",
+  "task_category": "frontend_component",
+  "task_complexity": "standard",
+  "project_name": "jvanet",
+  "required_features": [],
+  "acceptance_criteria": [],
+  "revision_instructions": [],
+  "stack_type": "nextjs_supabase",
+  "must_include_tests": true,
+  "metadata": {}
+}

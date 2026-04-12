@@ -65,13 +65,13 @@ export default function Hero() {
           style={{ animationDelay: "0.95s" }}
         >
           <a
-            href="#products"
+            href="/products"
             className="btn-primary rounded-lg px-8 py-3.5 text-sm font-semibold text-accent tracking-wide"
           >
             Explore Our Products
           </a>
           <a
-            href="#services"
+            href="/services"
             className="text-text-secondary border border-border rounded-lg px-8 py-3.5 text-sm font-medium tracking-wide hover:text-text hover:border-text-muted/30 transition-all duration-300"
           >
             Enterprise Consulting

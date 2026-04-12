@@ -1,16 +1,12 @@
 # jvanet-website — Build Task
 
-**Task**: Products Page — Filterable Showcase
+**Task**: Contact Page & Cross-Page Navigation
 **Category**: frontend_component
 **Complexity**: standard
 
 ## Description
 
-Build the products page with filterable asymmetric grid showing all products organized by status (Live, Launching Soon, In Development, Ecosystem).
-
-## REVISION REQUIRED — Fix These Issues
-
-- [gemini:quality] Product data is duplicated in FeaturedProducts.tsx instead of being imported from a shared data source.; [gemini:completeness] Modified the home page (page.tsx) instead of building the requested products page.; [gemini:completeness] Failed to implement the 'filterable' requirement.
+Build the contact page with form and business details. Verify all inter-page navigation works correctly.
 
 ## Workflow (use your Superpowers)
 
@@ -30,7 +26,7 @@ Build the products page with filterable asymmetric grid showing all products org
 After EVERY significant step, update `forge_progress.json`:
 ```json
 {
-  "task_id": "jva-phase-003",
+  "task_id": "jva-phase-005",
   "status": "in_progress",
   "phase": "implementing",
   "completed_steps": [],
@@ -76,7 +72,7 @@ When ALL work is finished, tests pass, and build compiles:
 ```json
 // Write to .forge/done.json
 {
-  "task_id": "jva-phase-003",
+  "task_id": "jva-phase-005",
   "status": "completed",
   "completed_at": "ISO timestamp",
   "files_created": [],

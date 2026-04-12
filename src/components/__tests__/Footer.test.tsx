@@ -1,18 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import Footer from "../layout/Footer";
-
-// Mock next/link to render as a regular anchor
-jest.mock("next/link", () => {
-  return function MockLink({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) {
-    return <a href={href} {...props}>{children}</a>;
-  };
-});
+import Footer from "../Footer";
 
 describe("Footer", () => {
-  it("renders the company name", () => {
+  it("renders the copyright with company name", () => {
     render(<Footer />);
-    const matches = screen.getAllByText(/JVANET PTY LTD/);
-    expect(matches.length).toBeGreaterThanOrEqual(1);
+    const year = new Date().getFullYear().toString();
+    expect(screen.getByText(new RegExp(`${year} JVANET PTY LTD`))).toBeInTheDocument();
   });
 
   it("renders the ABN", () => {
@@ -24,14 +17,6 @@ describe("Footer", () => {
     render(<Footer />);
     const link = screen.getByRole("link", { name: /hello@jvanet.com/i });
     expect(link).toHaveAttribute("href", "mailto:hello@jvanet.com");
-  });
-
-  it("renders navigation links", () => {
-    render(<Footer />);
-    expect(screen.getByRole("link", { name: "About" })).toHaveAttribute("href", "/about");
-    expect(screen.getByRole("link", { name: "Products" })).toHaveAttribute("href", "/products");
-    expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute("href", "/services");
-    expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
   });
 
   it("uses a footer element", () => {

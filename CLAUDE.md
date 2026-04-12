@@ -10,7 +10,7 @@ Build the contact page with form and business details. Verify all inter-page nav
 
 ## REVISION REQUIRED — Fix These Issues
 
-- [gemini:quality] The implemented changes do not align with the requested task context.; [gemini:completeness] The contact page was not built.; [gemini:completeness] No contact form was implemented.
+- IMPORTANT: This task previously failed and was auto-recovered. Address the specific issues below before attempting your approach.
 
 ## Workflow (use your Superpowers)
 

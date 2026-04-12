@@ -8,6 +8,10 @@
 
 Build the contact page with form and business details. Verify all inter-page navigation works correctly.
 
+## REVISION REQUIRED — Fix These Issues
+
+- [gemini:quality] The implemented changes do not align with the requested task context.; [gemini:completeness] The contact page was not built.; [gemini:completeness] No contact form was implemented.
+
 ## Workflow (use your Superpowers)
 
 0. Before starting, check if `.forge/worker_output.md` exists from a prior attempt. If it does, read it to understand what was already done and continue from where it left off rather than starting from scratch. Also check `git log --oneline -5` for prior commits.

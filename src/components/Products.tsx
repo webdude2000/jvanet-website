@@ -58,6 +58,45 @@ const ICON_MAP: Record<Product["icon"], React.ReactNode> = {
       <path d="M24 16C24 16 20 14 14 18" stroke="currentColor" strokeWidth="1.25" opacity="0.3" />
     </svg>
   ),
+  cloud: (
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 20H20C22.2 20 24 18.2 24 16C24 13.8 22.2 12 20 12H19.5C19 9.2 16.8 7 14 7C11.2 7 9 9.2 8.5 12H8C5.8 12 4 13.8 4 16C4 18.2 5.8 20 8 20Z" stroke="currentColor" strokeWidth="1.25" />
+    </svg>
+  ),
+  invoice: (
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="3" width="18" height="22" rx="2" stroke="currentColor" strokeWidth="1.25" />
+      <path d="M9 9H15M9 13H19M9 17H13" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" opacity="0.5" />
+      <path d="M17 17L19 19" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" opacity="0.5" />
+    </svg>
+  ),
+  chart: (
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 22L10 14L15 17L24 6" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M20 6H24V10" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
+    </svg>
+  ),
+  property: (
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 24V12L14 4L24 12V24" stroke="currentColor" strokeWidth="1.25" />
+      <rect x="11" y="16" width="6" height="8" stroke="currentColor" strokeWidth="1.25" opacity="0.5" />
+    </svg>
+  ),
+  gamepad: (
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 10H22C23.1 10 24 10.9 24 12V18C24 19.1 23.1 20 22 20H6C4.9 20 4 19.1 4 18V12C4 10.9 4.9 10 6 10Z" stroke="currentColor" strokeWidth="1.25" />
+      <path d="M9 13V17M7 15H11" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" opacity="0.5" />
+      <circle cx="19" cy="14" r="1" fill="currentColor" opacity="0.5" />
+      <circle cx="17" cy="16" r="1" fill="currentColor" opacity="0.5" />
+    </svg>
+  ),
+  lab: (
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 4V12L4 22C3.5 23 4.2 24 5.3 24H22.7C23.8 24 24.5 23 24 22L18 12V4" stroke="currentColor" strokeWidth="1.25" />
+      <path d="M10 4H18" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+      <path d="M9 18H19" stroke="currentColor" strokeWidth="1.25" opacity="0.3" />
+    </svg>
+  ),
 };
 
 const STATUS_STYLES: Record<ProductStatus, { text: string; bg: string; border: string; dot: string }> = {

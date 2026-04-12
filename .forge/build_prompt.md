@@ -1,71 +1,71 @@
-You have a ForgeOS build task to complete. You have Superpowers and all skills loaded.
+# JVANET Website — Editorial Studio Redesign
 
-## Task: JVANet — Full UI redesign with Impeccable premium design
-**ID**: ui-jva-001
-**Category**: frontend_component
-**Complexity**: standard
-**Project**: jvanet
+## Task
+Transform jvanet.com from a single-page AI-template site into a multi-page editorial studio portfolio. The current site uses every AI-generated trope (glassmorphism, gradient text, pulse animations, geometric accents). Replace it with a typography-driven, intentionally designed professional site.
 
-## Description
-Redesign the JVANet IT services website using Impeccable skill for premium corporate tech aesthetics. Must project credibility, technical authority, and professionalism.
+## Design Spec
+Read the full spec at: `docs/superpowers/specs/2026-04-12-jvanet-editorial-redesign.md`
 
-## Context (already in your working directory)
-- Read `CLAUDE.md` — it has your coding standards and design requirements
-- Read `.forge/architecture.md` — full system design
-- Read `.forge/acceptance_criteria.md` — your checklist
-- Read `.forge/context.json` — machine-readable task context
+## Key Requirements
 
-## Workflow (use your Superpowers)
-1. Start with `/using-superpowers` to activate your full toolkit
-2. Read all `.forge/` context files to understand the full picture
-3. Use the architect agent to verify the approach if this is complex
-4. Create a plan in `plans/` directory with test gates per phase
-5. Use `/execute-plan` to implement with subagent-driven TDD
-6. After implementation, run `/review staged` for 6-dimension code review
-7. Fix any issues found in review
-8. Run all tests and verify the build compiles
-9. Run `/security-review` to check for security vulnerabilities
-10. Fix any security issues found before completing
+### Pages (5 total)
+1. `/` — Home: hero + featured products + brief about + CTA
+2. `/products` — Filterable product showcase with asymmetric grid
+3. `/about` — Company story, methodology (timeline, not cards), tech stack
+4. `/services` — Enterprise consulting offerings
+5. `/contact` — Contact form + business details
 
-## Progress Reporting (MANDATORY)
-After EVERY significant step, update `forge_progress.json`:
-```bash
-cat > forge_progress.json << 'EOF'
-{
-  "task_id": "ui-jva-001",
-  "status": "in_progress",
-  "phase": "implementing",
-  "completed_steps": ["list of completed steps"],
-  "current_step": "what you are doing now",
-  "files_created": [],
-  "files_modified": [],
-  "tests_passing": 0,
-  "tests_total": 0,
-  "errors": [],
-  "last_update": "$(date -Iseconds)"
-}
-EOF
-```
+### Design Principles
+- **Typography-first**: Large Syne display headings (4-6rem) contrasted with DM Sans body text
+- **Asymmetric layouts**: NOT uniform card grids. Featured items are larger. Mix widths.
+- **Generous whitespace**: 120-160px section padding. Content breathes.
+- **Left-aligned**: Max-width 1200px container. No center-everything.
+- **Remove ALL AI template tropes**: No glassmorphism, no gradient text, no pulse animations, no corner accents, no grain texture
 
-## Completion Signal (CRITICAL — do this when done)
-When ALL work is finished, tests pass, and build compiles:
-```bash
-cat > .forge/done.json << 'EOF'
-{
-  "task_id": "ui-jva-001",
-  "status": "completed",
-  "completed_at": "$(date -Iseconds)",
-  "files_created": [],
-  "files_modified": [],
-  "tests_passing": 0,
-  "tests_total": 0,
-  "summary": "Brief summary of what was built"
-}
-EOF
-```
+### Color Palette
+- Background: `#04070d`
+- Surface: `#0a1018`
+- Accent primary: `#5eead4` (cyan)
+- Accent secondary: `#f0abfc` (purple)
+- Text primary: `#e8edf4`
+- Text secondary: `#6b7d99`
 
-The ForgeWatch supervisor is monitoring for `.forge/done.json`.
-If you get stuck or cannot complete, write it with status "error" and explain.
-Do NOT exit the session — ForgeWatch will handle cleanup.
+### Product Data (MUST be accurate)
 
-Begin now. Start by reading the context files in .forge/ directory.
+**Live:**
+- ProposalForge (proposalforge.com) — AI-powered proposal writing for government & enterprise RFPs
+- AIBreakingWire (aibreakingwire.com) — AI news & intelligence platform
+- ManilaWellness (manilawellness.com) — On-demand wellness booking platform
+
+**Launching Soon:**
+- ClientOS — Freelancer & agency work management platform
+- CloudDeck — Cloud infrastructure management
+- QuickInvoice — Smart invoicing & billing
+
+**In Development:**
+- MomentumAI — AI-powered day trading intelligence
+- Da Nang Property — Property investment AI for Vietnam
+- QantasPointsPro — Qantas points optimization
+
+**Ecosystem:**
+- ForgeOS — AI development infrastructure (contains ForgeWatch, ForgeStack, ForgeWork)
+- ForgeLabs — Mobile apps & games division (Dig & Discover)
+
+### Technical Constraints
+- Keep Next.js 16 + Tailwind CSS 4 + static export
+- Zero new dependencies
+- Keep existing Vercel security headers
+- Keep DM Sans + Syne fonts
+- Update sitemap.xml for new pages
+- Unique metadata per page
+
+### Acceptance Criteria
+1. 5 working pages with navigation between them
+2. No glassmorphism, gradient text, pulse animations, or geometric decorations
+3. Typography-driven design with clear visual hierarchy
+4. Asymmetric product grids (not uniform cards)
+5. Product data accurate and up-to-date per the list above
+6. Responsive down to 375px
+7. Static export builds successfully (`npm run build`)
+8. Existing Vercel security headers preserved
+9. Lighthouse performance > 90

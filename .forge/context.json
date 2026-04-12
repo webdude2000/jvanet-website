@@ -1,14 +1,35 @@
 {
-  "task_id": "ui-jva-001",
-  "task_name": "JVANet \u2014 Full UI redesign with Impeccable premium design",
-  "task_description": "Redesign the JVANet IT services website using Impeccable skill for premium corporate tech aesthetics. Must project credibility, technical authority, and professionalism.",
+  "task_id": "jvanet-redesign-002",
+  "task_name": "JVANET Editorial Studio Redesign",
+  "task_description": "Multi-page editorial redesign of jvanet.com. Transform from single-page AI-template into typography-driven studio portfolio with 5 pages: Home, Products, About, Services, Contact. Updated product listings, asymmetric layouts, no AI template tropes.",
   "task_category": "frontend_component",
   "task_complexity": "standard",
-  "project_name": "jvanet",
-  "required_features": [],
-  "acceptance_criteria": [],
+  "project_name": "jvanet-website",
+  "required_features": [
+    "multi-page routing (5 pages)",
+    "typography-driven editorial design",
+    "asymmetric product grids",
+    "filterable product showcase",
+    "expandable ForgeOS ecosystem card",
+    "responsive down to 375px",
+    "updated product data",
+    "contact form"
+  ],
+  "acceptance_criteria": [
+    "5 working pages with nav",
+    "no glassmorphism/gradient text/pulse animations",
+    "typography hierarchy with Syne + DM Sans",
+    "asymmetric layouts",
+    "accurate product data",
+    "responsive to 375px",
+    "static export builds",
+    "lighthouse > 90"
+  ],
   "revision_instructions": [],
-  "stack_type": "nextjs_supabase",
+  "stack_type": "nextjs",
   "must_include_tests": true,
-  "metadata": {}
+  "metadata": {
+    "design_spec": "docs/superpowers/specs/2026-04-12-jvanet-editorial-redesign.md",
+    "previous_task": "ui-jva-001"
+  }
 }

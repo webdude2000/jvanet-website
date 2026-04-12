@@ -80,14 +80,25 @@ function IconLotus() {
   );
 }
 
-const products: Product[] = [
+interface FeaturedProduct extends Product {
+  featured: boolean;
+  highlights?: string[];
+}
+
+const products: FeaturedProduct[] = [
   {
     icon: <IconForge />,
     name: "ForgeOS",
     tagline: "AI Product Development Ecosystem",
     status: "In Development",
+    featured: true,
     description:
       "A unified ecosystem of interconnected AI-powered tools designed to streamline the entire product lifecycle — from client acquisition to project delivery.",
+    highlights: [
+      "Multi-agent orchestration",
+      "Automated code review pipelines",
+      "Security-first development",
+    ],
   },
   {
     icon: <IconDocument />,
@@ -95,8 +106,14 @@ const products: Product[] = [
     tagline: "AI Proposal Generator SaaS",
     status: "Live",
     url: "https://proposalforge.com",
+    featured: true,
     description:
       "Generate winning business proposals in minutes. AI-powered document generation tailored to your services, clients, and industry.",
+    highlights: [
+      "AI-generated proposals",
+      "Custom templates & branding",
+      "Client-ready PDF export",
+    ],
   },
   {
     icon: <IconSignal />,
@@ -104,6 +121,7 @@ const products: Product[] = [
     tagline: "AI News & Intelligence Platform",
     status: "Live",
     url: "https://aibreakingwire.com",
+    featured: false,
     description:
       "Curated AI news, analysis, and breaking developments for professionals tracking the AI landscape.",
   },
@@ -112,6 +130,7 @@ const products: Product[] = [
     name: "MomentumAI",
     tagline: "AI Productivity Suite",
     status: "In Development",
+    featured: false,
     description:
       "Intelligent workflow automation tools designed to give professionals and small teams an unfair advantage.",
   },
@@ -120,6 +139,7 @@ const products: Product[] = [
     name: "ClientOS",
     tagline: "Freelancer & Agency Work Management",
     status: "In Development",
+    featured: false,
     description:
       "Purpose-built work management platform for web developers, IT consultants, and small agencies — built by someone who lives the workflow daily.",
   },
@@ -128,6 +148,7 @@ const products: Product[] = [
     name: "Da Nang Property",
     tagline: "Property Investment Intelligence",
     status: "In Development",
+    featured: false,
     description:
       "AI-driven property analysis and investment intelligence for the emerging Da Nang, Vietnam real estate market.",
   },
@@ -137,6 +158,7 @@ const products: Product[] = [
     tagline: "Wellness Booking Platform",
     status: "Live",
     url: "https://manilawellness.com",
+    featured: false,
     description:
       "On-demand outcall massage and wellness booking platform serving Metro Manila.",
   },
@@ -164,15 +186,85 @@ export default function Products() {
           </p>
         </div>
 
+        {/* Featured products — asymmetric two-column layout */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5"
         >
-          {products.map((product, index) => (
+          {products.filter((p) => p.featured).map((product, index) => (
+            <div
+              key={product.name}
+              className="scroll-hidden card-premium rounded-xl p-8 md:p-10 flex flex-col group"
+              style={{ transitionDelay: `${index * 100}ms` }}
+              data-testid="featured-product"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-lg bg-accent/[0.08] border border-accent/15 flex items-center justify-center text-accent">
+                  {product.icon}
+                </div>
+                <span
+                  className={`inline-flex items-center gap-1.5 text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full ${
+                    product.status === "Live"
+                      ? "text-emerald-400 bg-emerald-400/[0.07] border border-emerald-400/20"
+                      : "text-text-muted bg-white/[0.03] border border-border"
+                  }`}
+                >
+                  <span
+                    className={`w-1 h-1 rounded-full ${
+                      product.status === "Live" ? "bg-emerald-400" : "bg-text-muted"
+                    }`}
+                  />
+                  {product.status}
+                </span>
+              </div>
+
+              <h3 className="text-xl md:text-2xl font-display font-bold text-text mb-1 tracking-tight group-hover:text-accent transition-colors duration-300">
+                {product.name}
+              </h3>
+              <p className="text-xs text-text-muted tracking-wide mb-5">
+                {product.tagline}
+              </p>
+
+              <p className="text-text-secondary text-[15px] leading-relaxed mb-6">
+                {product.description}
+              </p>
+
+              {product.highlights && (
+                <ul className="space-y-2 mb-6" data-testid="product-highlights">
+                  {product.highlights.map((h) => (
+                    <li key={h} className="flex items-center gap-2.5 text-sm text-text-secondary">
+                      <span className="w-1 h-1 rounded-full bg-accent shrink-0" aria-hidden="true" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {product.url && (
+                <a
+                  href={product.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-accent text-[13px] font-medium hover:text-accent-dim transition-colors duration-200 mt-auto"
+                >
+                  {product.url.replace("https://", "")}
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="opacity-60">
+                    <path d="M3 9L9 3M9 3H4.5M9 3V7.5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Remaining products — compact three-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {products.filter((p) => !p.featured).map((product, index) => (
             <div
               key={product.name}
               className="scroll-hidden card-premium rounded-xl p-7 flex flex-col group"
-              style={{ transitionDelay: `${index * 80}ms` }}
+              style={{ transitionDelay: `${(index + 2) * 80}ms` }}
+              data-testid="standard-product"
             >
               <div className="flex items-center justify-between mb-5">
                 <div className="w-10 h-10 rounded-lg bg-accent/[0.08] border border-accent/15 flex items-center justify-center text-accent">

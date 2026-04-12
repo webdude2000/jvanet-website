@@ -17,18 +17,18 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-6 text-center">
+      <div className="relative max-w-5xl mx-auto px-6">
         {/* Pre-heading */}
         <p
-          className="hero-animate text-[11px] text-text-muted tracking-[0.25em] uppercase font-medium mb-10"
+          className="hero-animate text-[11px] text-text-muted tracking-[0.25em] uppercase font-medium mb-8"
           style={{ animationDelay: "0.1s" }}
         >
           Australian Technology Company
         </p>
 
-        {/* Company name */}
+        {/* Company name — large, editorial */}
         <h1
-          className="hero-animate font-display text-6xl md:text-8xl lg:text-[7rem] font-bold text-text tracking-tight mb-3"
+          className="hero-animate font-display text-7xl md:text-[8rem] lg:text-[10rem] font-bold text-text tracking-tighter leading-[0.85] mb-4"
           style={{ animationDelay: "0.25s" }}
         >
           JVANET
@@ -36,22 +36,14 @@ export default function Hero() {
 
         {/* Accent line */}
         <div
-          className="hero-line mx-auto h-[2px] w-16 md:w-24 bg-gradient-to-r from-accent to-accent-dim mb-6"
+          className="hero-line h-[2px] w-16 md:w-24 bg-gradient-to-r from-accent to-accent-dim mb-8"
           style={{ animationDelay: "0.5s" }}
         />
 
-        {/* Backronym */}
-        <p
-          className="hero-animate text-[11px] md:text-xs text-text-muted tracking-[0.3em] uppercase mb-14"
-          style={{ animationDelay: "0.6s" }}
-        >
-          Joint Venture Autonomous Neural Engine Technology
-        </p>
-
-        {/* Tagline */}
+        {/* Tagline — left-aligned, editorial weight */}
         <h2
-          className="hero-animate font-display text-2xl md:text-4xl lg:text-5xl font-bold text-text leading-tight mb-6"
-          style={{ animationDelay: "0.75s" }}
+          className="hero-animate font-display text-2xl md:text-4xl lg:text-5xl font-bold text-text leading-tight mb-6 max-w-3xl"
+          style={{ animationDelay: "0.65s" }}
         >
           Engineering AI-Powered Products
           <br />
@@ -60,8 +52,8 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p
-          className="hero-animate text-text-secondary text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed"
-          style={{ animationDelay: "0.9s" }}
+          className="hero-animate text-text-secondary text-base md:text-lg max-w-xl mb-12 leading-relaxed"
+          style={{ animationDelay: "0.8s" }}
         >
           We build intelligent software products and deliver enterprise IT
           consulting with the precision of engineers and the speed of AI.
@@ -69,8 +61,8 @@ export default function Hero() {
 
         {/* CTA buttons */}
         <div
-          className="hero-animate flex flex-wrap items-center justify-center gap-4"
-          style={{ animationDelay: "1.05s" }}
+          className="hero-animate flex flex-wrap items-center gap-4"
+          style={{ animationDelay: "0.95s" }}
         >
           <a
             href="#products"
@@ -79,11 +71,33 @@ export default function Hero() {
             Explore Our Products
           </a>
           <a
-            href="#contact"
+            href="#services"
             className="text-text-secondary border border-border rounded-lg px-8 py-3.5 text-sm font-medium tracking-wide hover:text-text hover:border-text-muted/30 transition-all duration-300"
           >
-            Get in Touch
+            Enterprise Consulting
           </a>
+        </div>
+
+        {/* Quick stats bar */}
+        <div
+          className="hero-animate flex items-center gap-8 md:gap-12 mt-16 pt-10 border-t border-border"
+          style={{ animationDelay: "1.1s" }}
+          data-testid="hero-stats"
+        >
+          <div>
+            <p className="text-2xl md:text-3xl font-display font-bold text-text">7</p>
+            <p className="text-[10px] text-text-muted tracking-widest uppercase mt-1">Products</p>
+          </div>
+          <div className="w-px h-8 bg-border" aria-hidden="true" />
+          <div>
+            <p className="text-2xl md:text-3xl font-display font-bold text-text">3</p>
+            <p className="text-[10px] text-text-muted tracking-widest uppercase mt-1">Live</p>
+          </div>
+          <div className="w-px h-8 bg-border" aria-hidden="true" />
+          <div>
+            <p className="text-2xl md:text-3xl font-display font-bold text-text">20+</p>
+            <p className="text-[10px] text-text-muted tracking-widest uppercase mt-1">Years IT</p>
+          </div>
         </div>
       </div>
 

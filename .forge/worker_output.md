@@ -3,51 +3,44 @@
 ## What was implemented
 
 ### Files created
-- `src/components/Container.tsx` — Reusable container wrapper with configurable max-width, padding, and semantic element
-- `src/components/Footer.tsx` — Standalone footer component extracted from Contact, with copyright, ABN, location, and email
-- `src/components/Section.tsx` — Reusable section wrapper with optional divider line
-- `src/components/__tests__/Container.test.tsx` — 5 tests for Container component
-- `src/components/__tests__/Footer.test.tsx` — 4 tests for Footer component
-- `src/components/__tests__/Section.test.tsx` — 5 tests for Section component
-- `jest.config.ts` — Jest configuration with ts-jest, jsdom, and path aliases
-- `jest.setup.ts` — Jest setup with @testing-library/jest-dom matchers
+- `src/components/__tests__/ContactForm.test.tsx` — 6 tests for contact form fields, validation, mailto action
+- `src/components/__tests__/BusinessDetails.test.tsx` — 5 tests for business details (company name, ABN, location, email, response notice)
+- `src/components/__tests__/LayoutNavbar.test.tsx` — 6 tests for cross-page navigation (routes, active state, mobile menu, no hash anchors)
+- `src/components/__tests__/LayoutFooter.test.tsx` — 5 tests for footer navigation links, email, copyright, ABN, nav landmark
 
 ### Files modified
-- `src/app/globals.css` — Refined design system: removed noise overlay, removed metric glow effects, removed excessive box-shadow on card hover, organized into clear sections (palette, base, animations, cards, dividers, buttons)
-- `src/app/layout.tsx` — Unchanged structurally (layout shell already clean)
-- `src/app/page.tsx` — Added Footer component to page layout shell
-- `src/components/Hero.tsx` — Stripped AI template tropes: removed SVG grid pattern, removed animated grid lines, removed corner accent squares, removed pulsing badge dot, simplified to clean radial gradient background only
-- `src/components/Contact.tsx` — Extracted footer into separate component, removed ABN (now in Footer), simplified structure
-- `src/components/About.tsx` — Removed metric-value glow class from stat numbers
-- `src/components/Products.tsx` — Removed animate-pulse from status indicator dots
-- `tailwind.config.ts` — Cleaned up stale color definitions that conflicted with CSS @theme tokens
-- `package.json` — Added test script, added testing dependencies
+- `src/components/layout/Navbar.tsx` — Added `onClick` to mobile menu links to close menu on navigation
+- `package.json` — Added `@testing-library/user-event` dev dependency
 
 ## Approach taken
 
-The existing site had a complete component set but suffered from "AI startup template" syndrome — glowing grids, pulsing dots, noise textures, and excessive visual effects. The task was to establish a proper design system foundation and shared layout shell.
+The contact page (`/contact`) with ContactForm and BusinessDetails was already implemented by a prior worker. The layout Navbar (`src/components/layout/Navbar.tsx`) already used Next.js `Link` with proper page routes (`/about`, `/products`, `/services`, `/contact`) — no hash anchors.
 
-**Design System**: Refined globals.css into clearly organized sections with restrained tokens. Removed the noise overlay, metric glow text-shadow, and excessive card hover effects. The palette remains dark navy/cyan but with reduced intensity.
-
-**Layout Shell**: Created Container (max-width wrapper), Footer (extracted from Contact), and Section (reusable section wrapper with optional divider). Updated page.tsx to use Footer as a proper layout element.
-
-**AI Trope Removal**: The Hero was the biggest offender — SVG grid patterns, animated lines, corner accent squares, and a pulsing "Australian Technology Company" badge. All replaced with a minimal radial gradient. Products had pulsing status dots. About had glowing text-shadow on metrics. All removed.
+This task focused on:
+1. **Verifying cross-page navigation works** — confirmed layout Navbar and Footer use correct page routes
+2. **Adding mobile menu close on navigation** — mobile menu links now close the menu when clicked
+3. **Writing comprehensive tests** — 22 new tests covering ContactForm, BusinessDetails, layout Navbar, and layout Footer
+4. **Fixing lint** — avoided the `setState in useEffect` anti-pattern by using onClick handlers instead
 
 ## Issues encountered
 
-- Jest config key was `setupFilesAfterEnv` not `setupFilesAfterSetup` — fixed quickly
-- tailwind.config.ts had stale color overrides conflicting with CSS @theme tokens — cleaned up
+- Initial approach used `useEffect(() => setMenuOpen(false), [pathname])` to close mobile menu on route change, but ESLint `react-hooks/set-state-in-effect` rule flagged it. Switched to `onClick` handler on mobile menu links.
 
 ## Test results
 
-14/14 tests passing:
-- Container: 5 tests (rendering, classes, element type, custom className)
-- Footer: 4 tests (copyright, ABN, email link, semantic element)
-- Section: 5 tests (rendering, element type, id, divider presence/absence)
+36/36 tests passing across 7 test suites:
+- Container: 5 tests
+- Section: 5 tests
+- Footer (old): 4 tests
+- ContactForm: 6 tests
+- BusinessDetails: 5 tests
+- LayoutNavbar: 6 tests
+- LayoutFooter: 5 tests
 
-Build compiles successfully (static export). Lint passes clean.
+Build compiles successfully (static export). Lint clean on all files.
 
 ## Remaining concerns
 
-- No E2E/visual tests yet — only unit tests for new layout components
-- Section component is created but not yet used by existing section components (About, Products, etc.) — this is intentional to avoid unnecessary churn; they can be migrated incrementally
+- Old `src/components/Navbar.tsx` and `src/components/Footer.tsx` are unused (layout uses `src/components/layout/` versions) — could be removed in a cleanup pass
+- Contact form uses mailto: action (no backend) — as noted in project CLAUDE.md, "email link only for now"
+- No E2E tests yet — Playwright could verify actual navigation in browser

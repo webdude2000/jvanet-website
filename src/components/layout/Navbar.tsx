@@ -111,6 +111,7 @@ export default function Navbar() {
               <li key={href}>
                 <Link
                   href={href}
+                  onClick={() => setMenuOpen(false)}
                   className={`flex items-center gap-2.5 px-3 py-2.5 rounded-md text-[13px] font-medium tracking-wide transition-colors duration-200 ${
                     isActive
                       ? "text-accent bg-accent/[0.06]"

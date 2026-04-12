@@ -1,16 +1,16 @@
 # jvanet-website — Build Task
 
-**Task**: Design System & Layout Foundation
+**Task**: Products Page — Filterable Showcase
 **Category**: frontend_component
 **Complexity**: standard
 
 ## Description
 
-Strip all AI template tropes, establish typography-first design system, build shared layout shell (nav, footer, container). Foundation for all pages.
+Build the products page with filterable asymmetric grid showing all products organized by status (Live, Launching Soon, In Development, Ecosystem).
 
 ## REVISION REQUIRED — Fix These Issues
 
-- Interactive worker timed out
+- [gemini:quality] Product data is duplicated in FeaturedProducts.tsx instead of being imported from a shared data source.; [gemini:completeness] Modified the home page (page.tsx) instead of building the requested products page.; [gemini:completeness] Failed to implement the 'filterable' requirement.
 
 ## Workflow (use your Superpowers)
 
@@ -30,7 +30,7 @@ Strip all AI template tropes, establish typography-first design system, build sh
 After EVERY significant step, update `forge_progress.json`:
 ```json
 {
-  "task_id": "jva-phase-001",
+  "task_id": "jva-phase-003",
   "status": "in_progress",
   "phase": "implementing",
   "completed_steps": [],
@@ -76,7 +76,7 @@ When ALL work is finished, tests pass, and build compiles:
 ```json
 // Write to .forge/done.json
 {
-  "task_id": "jva-phase-001",
+  "task_id": "jva-phase-003",
   "status": "completed",
   "completed_at": "ISO timestamp",
   "files_created": [],

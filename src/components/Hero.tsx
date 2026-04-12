@@ -6,9 +6,8 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated grid background */}
+      {/* Subtle background glow */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {/* Radial gradient glow */}
         <div
           className="absolute inset-0"
           style={{
@@ -16,41 +15,6 @@ export default function Hero() {
               "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(0, 200, 255, 0.06) 0%, transparent 70%)",
           }}
         />
-        {/* Grid pattern */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00c8ff" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hero-grid)" />
-        </svg>
-        {/* Vertical accent lines */}
-        <div
-          className="absolute top-0 h-full w-px opacity-[0.06]"
-          style={{
-            background: "linear-gradient(180deg, transparent, #00c8ff 30%, #00c8ff 70%, transparent)",
-            left: "25%",
-          }}
-        />
-        <div
-          className="absolute top-0 h-full w-px opacity-[0.04]"
-          style={{
-            background: "linear-gradient(180deg, transparent, #00c8ff 40%, #00c8ff 60%, transparent)",
-            left: "75%",
-          }}
-        />
-        {/* Horizontal accent */}
-        <div
-          className="absolute left-0 w-full h-px opacity-[0.05]"
-          style={{
-            background: "linear-gradient(90deg, transparent, #00c8ff 30%, #00c8ff 70%, transparent)",
-            top: "35%",
-          }}
-        />
-        {/* Corner accents */}
-        <div className="absolute top-[20%] left-[25%] w-2 h-2 border border-accent/20 rounded-sm" />
-        <div className="absolute top-[35%] left-[75%] w-2 h-2 border border-accent/10 rounded-sm" />
       </div>
 
       <div className="relative max-w-5xl mx-auto px-6 text-center">
@@ -59,7 +23,7 @@ export default function Hero() {
           className="hero-animate inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/[0.04] mb-10"
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
           <span className="text-[11px] text-accent/80 tracking-[0.2em] uppercase font-medium">
             Australian Technology Company
           </span>
@@ -94,7 +58,7 @@ export default function Hero() {
         >
           Engineering AI-Powered Products
           <br />
-          <span className="text-accent-gradient">from Concept to Revenue</span>
+          <span className="text-accent">from Concept to Revenue</span>
         </h2>
 
         {/* Subtitle */}

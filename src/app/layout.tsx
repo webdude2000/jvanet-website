@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description:
     "JVANET (Joint Venture Autonomous Neural Engine Technology) — Australian technology company building AI-powered software products and providing enterprise IT consulting services.",
   metadataBase: new URL("https://jvanet.com"),
+  keywords: ["AI products", "IT consulting", "Australian technology", "software development", "enterprise IT"],
   openGraph: {
     title: "JVANET PTY LTD — AI-Powered Product Studio & IT Consulting",
     description:
@@ -26,6 +27,17 @@ export const metadata: Metadata = {
     url: "https://jvanet.com",
     siteName: "JVANET PTY LTD",
     type: "website",
+    locale: "en_AU",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JVANET PTY LTD — AI-Powered Product Studio & IT Consulting",
+    description:
+      "Australian technology company building AI-powered software products and providing enterprise IT consulting services.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   icons: {
     icon: "/favicon.svg",

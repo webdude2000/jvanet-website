@@ -187,7 +187,7 @@ export default function Products() {
                 >
                   <span
                     className={`w-1 h-1 rounded-full ${
-                      product.status === "Live" ? "bg-emerald-400 animate-pulse" : "bg-text-muted"
+                      product.status === "Live" ? "bg-emerald-400" : "bg-text-muted"
                     }`}
                   />
                   {product.status}

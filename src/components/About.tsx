@@ -43,13 +43,13 @@ export default function About() {
           <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-border">
             <div className="scroll-hidden space-y-8">
               <div>
-                <p className="metric-value text-5xl md:text-6xl font-display font-bold text-accent mb-2">100+</p>
+                <p className="text-5xl md:text-6xl font-display font-bold text-accent mb-2">100+</p>
                 <p className="text-text-muted text-sm tracking-wide uppercase">
                   Combined years of technology experience
                 </p>
               </div>
               <div>
-                <p className="metric-value text-5xl md:text-6xl font-display font-bold text-accent mb-2">20+</p>
+                <p className="text-5xl md:text-6xl font-display font-bold text-accent mb-2">20+</p>
                 <p className="text-text-muted text-sm tracking-wide uppercase">
                   Years founder experience in IT
                 </p>

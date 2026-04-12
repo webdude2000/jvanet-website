@@ -1,15 +1,20 @@
-# jvanet — Build Task
+# jvanet-website — Build Task
 
-**Task**: JVANet — Full UI redesign with Impeccable premium design
+**Task**: Design System & Layout Foundation
 **Category**: frontend_component
 **Complexity**: standard
 
 ## Description
 
-Redesign the JVANet IT services website using Impeccable skill for premium corporate tech aesthetics. Must project credibility, technical authority, and professionalism.
+Strip all AI template tropes, establish typography-first design system, build shared layout shell (nav, footer, container). Foundation for all pages.
+
+## REVISION REQUIRED — Fix These Issues
+
+- Interactive worker timed out
 
 ## Workflow (use your Superpowers)
 
+0. Before starting, check if `.forge/worker_output.md` exists from a prior attempt. If it does, read it to understand what was already done and continue from where it left off rather than starting from scratch. Also check `git log --oneline -5` for prior commits.
 1. Read all `.forge/` context files to understand the full picture
 2. Use the architect agent to verify the approach if this is complex
 3. Create a plan with test gates per phase
@@ -25,7 +30,7 @@ Redesign the JVANet IT services website using Impeccable skill for premium corpo
 After EVERY significant step, update `forge_progress.json`:
 ```json
 {
-  "task_id": "ui-jva-001",
+  "task_id": "jva-phase-001",
   "status": "in_progress",
   "phase": "implementing",
   "completed_steps": [],
@@ -39,13 +44,39 @@ After EVERY significant step, update `forge_progress.json`:
 }
 ```
 
+## Worker Output Summary (MANDATORY — write BEFORE done.json)
+
+Before writing `.forge/done.json`, write a detailed summary to `.forge/worker_output.md`:
+
+```markdown
+# Worker Output Summary
+
+## What was implemented
+- Files created: [list]
+- Files modified: [list]
+
+## Approach taken
+Describe the approach and why you chose it.
+
+## Issues encountered
+Any problems hit and how they were resolved.
+
+## Test results
+Which tests pass/fail, any skipped tests.
+
+## Remaining concerns
+Anything incomplete or needing follow-up.
+```
+
+This file is read by the review pipeline for richer context. Be thorough.
+
 ## Completion Signal (CRITICAL — do this when done)
 
 When ALL work is finished, tests pass, and build compiles:
 ```json
 // Write to .forge/done.json
 {
-  "task_id": "ui-jva-001",
+  "task_id": "jva-phase-001",
   "status": "completed",
   "completed_at": "ISO timestamp",
   "files_created": [],

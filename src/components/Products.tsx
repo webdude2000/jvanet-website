@@ -1,146 +1,12 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { products } from "@/data/products";
+import { ProductIcon } from "@/components/ProductIcon";
 
-interface Product {
-  icon: React.ReactNode;
-  name: string;
-  tagline: string;
-  status: "Live" | "In Development";
-  url?: string;
-  description: string;
-}
-
-function IconForge() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 3L25 9V19L14 25L3 19V9L14 3Z" stroke="currentColor" strokeWidth="1.25" />
-      <path d="M14 13L25 9" stroke="currentColor" strokeWidth="1.25" opacity="0.4" />
-      <path d="M14 13L3 9" stroke="currentColor" strokeWidth="1.25" opacity="0.4" />
-      <path d="M14 13V25" stroke="currentColor" strokeWidth="1.25" opacity="0.4" />
-    </svg>
-  );
-}
-
-function IconDocument() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="3" width="18" height="22" rx="2" stroke="currentColor" strokeWidth="1.25" />
-      <path d="M9 9H19M9 13H19M9 17H15" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" opacity="0.5" />
-    </svg>
-  );
-}
-
-function IconSignal() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7 22V16M12 22V10M17 22V14M22 22V6" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
-      <circle cx="22" cy="6" r="2" stroke="currentColor" strokeWidth="1.25" />
-    </svg>
-  );
-}
-
-function IconRocket() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 4C14 4 8 10 8 18L14 22L20 18C20 10 14 4 14 4Z" stroke="currentColor" strokeWidth="1.25" />
-      <circle cx="14" cy="14" r="2" stroke="currentColor" strokeWidth="1.25" opacity="0.5" />
-    </svg>
-  );
-}
-
-function IconBriefcase() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="3" y="9" width="22" height="14" rx="2" stroke="currentColor" strokeWidth="1.25" />
-      <path d="M10 9V7C10 5.895 10.895 5 12 5H16C17.105 5 18 5.895 18 7V9" stroke="currentColor" strokeWidth="1.25" />
-      <path d="M3 15H25" stroke="currentColor" strokeWidth="1.25" opacity="0.3" />
-    </svg>
-  );
-}
-
-function IconBuilding() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="6" width="12" height="19" stroke="currentColor" strokeWidth="1.25" />
-      <rect x="16" y="12" width="8" height="13" stroke="currentColor" strokeWidth="1.25" />
-      <path d="M8 10V12M12 10V12M8 15V17M12 15V17" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" opacity="0.5" />
-    </svg>
-  );
-}
-
-function IconLotus() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 6C14 6 8 12 8 18C10 20 12 21 14 22C16 21 18 20 20 18C20 12 14 6 14 6Z" stroke="currentColor" strokeWidth="1.25" />
-      <path d="M14 14V22" stroke="currentColor" strokeWidth="1.25" opacity="0.4" />
-      <path d="M4 16C4 16 8 14 14 18" stroke="currentColor" strokeWidth="1.25" opacity="0.3" />
-      <path d="M24 16C24 16 20 14 14 18" stroke="currentColor" strokeWidth="1.25" opacity="0.3" />
-    </svg>
-  );
-}
-
-const products: Product[] = [
-  {
-    icon: <IconForge />,
-    name: "ForgeOS",
-    tagline: "AI Product Development Ecosystem",
-    status: "In Development",
-    description:
-      "A unified ecosystem of interconnected AI-powered tools designed to streamline the entire product lifecycle — from client acquisition to project delivery.",
-  },
-  {
-    icon: <IconDocument />,
-    name: "ProposalForge",
-    tagline: "AI Proposal Generator SaaS",
-    status: "Live",
-    url: "https://proposalforge.com",
-    description:
-      "Generate winning business proposals in minutes. AI-powered document generation tailored to your services, clients, and industry.",
-  },
-  {
-    icon: <IconSignal />,
-    name: "AIBreakingWire",
-    tagline: "AI News & Intelligence Platform",
-    status: "Live",
-    url: "https://aibreakingwire.com",
-    description:
-      "Curated AI news, analysis, and breaking developments for professionals tracking the AI landscape.",
-  },
-  {
-    icon: <IconRocket />,
-    name: "MomentumAI",
-    tagline: "AI Productivity Suite",
-    status: "In Development",
-    description:
-      "Intelligent workflow automation tools designed to give professionals and small teams an unfair advantage.",
-  },
-  {
-    icon: <IconBriefcase />,
-    name: "ClientOS",
-    tagline: "Freelancer & Agency Work Management",
-    status: "In Development",
-    description:
-      "Purpose-built work management platform for web developers, IT consultants, and small agencies — built by someone who lives the workflow daily.",
-  },
-  {
-    icon: <IconBuilding />,
-    name: "Da Nang Property",
-    tagline: "Property Investment Intelligence",
-    status: "In Development",
-    description:
-      "AI-driven property analysis and investment intelligence for the emerging Da Nang, Vietnam real estate market.",
-  },
-  {
-    icon: <IconLotus />,
-    name: "ManilaWellness",
-    tagline: "Wellness Booking Platform",
-    status: "Live",
-    url: "https://manilawellness.com",
-    description:
-      "On-demand outcall massage and wellness booking platform serving Metro Manila.",
-  },
-];
+const featuredProducts = products.filter(
+  (p) => p.status === "Live" || p.status === "In Development"
+).slice(0, 7);
 
 export default function Products() {
   const gridRef = useScrollAnimation();
@@ -168,15 +34,15 @@ export default function Products() {
           ref={gridRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {products.map((product, index) => (
+          {featuredProducts.map((product, index) => (
             <div
-              key={product.name}
+              key={product.id}
               className="scroll-hidden card-premium rounded-xl p-7 flex flex-col group"
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               <div className="flex items-center justify-between mb-5">
                 <div className="w-10 h-10 rounded-lg bg-accent/[0.08] border border-accent/15 flex items-center justify-center text-accent">
-                  {product.icon}
+                  <ProductIcon productId={product.id} />
                 </div>
                 <span
                   className={`inline-flex items-center gap-1.5 text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full ${
@@ -220,6 +86,31 @@ export default function Products() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* View all products link */}
+        <div className="text-center mt-12">
+          <a
+            href="/products"
+            className="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-accent-dim transition-colors duration-200 group"
+          >
+            View all products & ecosystem
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            >
+              <path
+                d="M3 8H13M13 8L9 4M13 8L9 12"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
